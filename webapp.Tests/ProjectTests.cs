@@ -8,7 +8,7 @@ using WebApp1.Models;
 
 namespace webapp.Tests;
 
-public class ProgramAdminTest
+public class ProjectTests
 {
         [Fact]
         public async Task AddProgramAdminAsync_ProgramAdminIsAdded()
