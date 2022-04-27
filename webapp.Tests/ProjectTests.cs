@@ -8,7 +8,7 @@ using WebApp1.Models;
 
 namespace webapp.Tests;
 
-public class ProjectTests
+public class ProgramAdminTest
 {
         [Fact]
         public async Task AddProgramAdminAsync_ProgramAdminIsAdded()
@@ -19,9 +19,10 @@ public class ProjectTests
                 var recId = 10;
                 var expectedProgramAdmin = new ProgramAdmin() 
                 { 
-                    Id = recId, 
+                    ProgramAdminID = recId, 
                     FirstName = "Tester",
                     LastName = "Test",
+                    Email = "Tester.Test12@gmail.com",
                 };
 
                 // Act
@@ -36,14 +37,24 @@ public class ProjectTests
         [Fact]
         public async Task SubmitForm()
         {
+            
             using (var db = new ApbetProjectContext(Utilities.TestDbContextOptions()))
             {
-                
-                var expectedFormSubmission = new FormSubmission();
-                bool result = expectedFormSubmission(0);
+                var IntID = 12;
+                var sub = true;
+                var expectedFormSubmission = new Instructor()
+                {
+                    InstructorID = IntID,
+                    FirstName = "Tim",
+                    LastName = "Hope",
+                    Email = "Tim.TimHope@gmail.com",
+                    FormSubmission = sub,
+                };
 
-                
-                Assert.False(result, "Form was not Submitted");
+                await db.AddFormSubmissionAsync(expectedFormSubmission);
+
+                var actualFormSubmission = await db.FindAsync<Instructor>(IntID);
+                Assert.True(sub==true,"Form as been submitted");
             }
         }
 
@@ -52,36 +63,28 @@ public class ProjectTests
         {
             using (var db = new ApbetProjectContext(Utilities.TestDbContextOptions()))
             {
-                var InstrucID =10;
+                var InstrucID =11;
+                var InstruName = "Testings";
                 var expectedInstructor = new Instructor()
                 {
                     InstructorID = InstrucID,
-                    FirstName = "Testing",
+                    FirstName = InstruName,
                     LastName = "StillTesting",
+                    Email = "test.testingstill@gmail.com",
+                    
+
+                    
+
 
                     
                 };
 
                 await db.AddInstructorAsync(expectedInstructor);
-                Assert.
+                //Assert.
 
                 var actualInstructor = await db.FindAsync<Instructor>(InstrucID);
                 Assert.Equal(expectedInstructor, actualInstructor);
             }
         }
-        // public bool InstructorAuthenticated(bool AuthenticatedInstructor)
-        // {
-        //     var InstrucID=10;
-        //     if (InstructorAuthentication = 0)
-        //     {
-        //         return False;
-        //     }
-        //     else
-        //     {
-        //         return True;
-        //     }
 
-
-        // }
 }
-
