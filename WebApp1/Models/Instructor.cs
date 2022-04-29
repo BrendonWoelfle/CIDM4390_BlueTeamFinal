@@ -1,29 +1,36 @@
+#nullable disable
+using System;
 using System.ComponentModel.DataAnnotations;
-using System.Collections.Generic; 
-using Microsoft.AspNetCore.Authorization;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace WebApp1.Models
 {
     public class Instructor
     {
-        public int InstructorID {get;set;}
-        public string FirstName {get;set;}
-        public string LastName {get;set;}
-        public int CourseID {get;set;}
-        public bool FormSubmission {get; set;}
-        public int InstructorAuthentication {get; set;}
+        public int ID { get; set; }
 
-        [DataType(DataType.EmailAddress)]
-        public string Email {get;set;}
+        [Required]
+        [Display(Name = "Last Name")]
+        [StringLength(50)]
+        public string LastName { get; set; }
 
+        [Required]
+        [Column("FirstName")]
+        [Display(Name = "First Name")]
+        [StringLength(50)]
+        public string FirstMidName { get; set; }
 
-        public InstructorStatus Status { get; set; }
-    }
-    //what role they will have
-    public enum InstructorStatus
-    {
-        Add,
-        Edit
-        
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Hire Date")]
+        public DateTime HireDate { get; set; }
+
+        [Display(Name = "Full Name")]
+        public string FullName
+        {
+            get { return LastName + ", " + FirstMidName; }
+        }
+        public ICollection<Form> Forms {get; set;}
     }
 }
