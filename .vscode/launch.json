@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/WebApp1/bin/Debug/net6.0/WebApp1.dll",
+            "program": "${workspaceFolder}/BlueTeam-Spring2022/webapp/bin/Debug/net6.0/webapp.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/WebApp1",
+            "cwd": "${workspaceFolder}/BlueTeam-Spring2022/webapp",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {

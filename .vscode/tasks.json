@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/WebApp1/WebApp1.csproj",
+                "${workspaceFolder}/BlueTeam-Spring2022/webapp/webapp.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/WebApp1/WebApp1.csproj",
+                "${workspaceFolder}/BlueTeam-Spring2022/webapp/webapp.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/WebApp1/WebApp1.csproj"
+                "${workspaceFolder}/BlueTeam-Spring2022/webapp/webapp.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
