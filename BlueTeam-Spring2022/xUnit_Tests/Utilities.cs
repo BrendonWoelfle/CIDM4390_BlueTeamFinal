@@ -12,7 +12,7 @@ namespace webapp.Tests
     public static class Utilities
     {
         //will need to change out the DbContext to the updated file. 
-        public static DbContextOptions<ApbetProjectContext> TestDbContextOptions()
+        public static DbContextOptions<ApplicationDbContext> TestDbContextOptions()
         {
             // Create a new service provider to create a new in-memory database.
             var serviceProvider = new ServiceCollection()
@@ -22,7 +22,7 @@ namespace webapp.Tests
             // Create a new options instance using an in-memory database and 
             // IServiceProvider that the context should resolve all of its 
             // services from.
-            var builder = new DbContextOptionsBuilder<ApbetProjectContext>()
+            var builder = new DbContextOptionsBuilder<ApplicationDbContext>()
                 .UseInMemoryDatabase("InMemoryDb")
                 .UseInternalServiceProvider(serviceProvider);
 
