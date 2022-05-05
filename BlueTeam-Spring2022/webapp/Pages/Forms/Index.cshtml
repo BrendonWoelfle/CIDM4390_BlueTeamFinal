@@ -1,0 +1,30 @@
+@page
+@model webapp.Pages.Forms.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Form) {
+        <tr>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.FormID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.FormID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.FormID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
