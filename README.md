@@ -7,6 +7,7 @@ This is a brief guide using excerpts from the lectures and the Rubin book to hel
 * Scrum Roles
 * Product Owner - tells us what they want built - Dr. Babbs
 * ScrumMaster - guides the team through the process - Chris Ward
+* IntergrationMaster - Merges code, makes sure no issues are wrong with the code - Brendon Woelfle
 * Development Team - builds product - Sang Ci, Tyler Henderson, Brendon Woelfle, Chris Ward
 
 ## Scrum Activities and Artifacts
