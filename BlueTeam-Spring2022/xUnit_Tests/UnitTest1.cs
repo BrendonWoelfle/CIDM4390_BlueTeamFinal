@@ -45,10 +45,10 @@ public class ProjectTests
                 var expectedFormSubmission = new Instructor()
                 {
                     InstructorID = IntID,
-                    FirstName = "Tim",
+                    FirstMidName = "Tim",
                     LastName = "Hope",
-                    Email = "Tim.TimHope@gmail.com",
-                    FormSubmission = sub,
+                    // Email = "Tim.TimHope@gmail.com",
+                    // FormSubmission = sub,
                 };
 
                 await db.AddFormSubmissionAsync(expectedFormSubmission);
@@ -68,9 +68,9 @@ public class ProjectTests
                 var expectedInstructor = new Instructor()
                 {
                     InstructorID = InstrucID,
-                    FirstName = InstruName,
+                    FirstMidName = InstruName,
                     LastName = "StillTesting",
-                    Email = "test.testingstill@gmail.com",
+                    //Email = "test.testingstill@gmail.com",
                     
                     
                 };
