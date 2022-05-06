@@ -4,6 +4,8 @@ using SendGrid;
 using SendGrid.Helpers.Mail;
 using webapp.Data;
 using Microsoft.Extensions.DependencyInjection;
+using webapp.Models;
+
 
 
 
@@ -18,6 +20,8 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
+
+
 
 // builder.Services.AddTransient<IEmailSender, EmailSender>();
 // builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
@@ -55,6 +59,11 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope()){
+    var services = scope.ServiceProvider;
+    SeedData.Initialize(services);
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
